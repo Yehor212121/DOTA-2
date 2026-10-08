@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>История Dota 2 — архив легенд</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;600&display=swap">
+<style>
+:root{--bg:#05070a;--panel:#0d1117;--red:#9b1c1c;--gold:#c9a24b;--teal:#2ee6c4;--text:#d9dde3;--mute:#8b95a3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.7 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Russo One',Impact,sans-serif;font-weight:400;letter-spacing:.02em;margin:0 0 .5em}
+a{color:var(--gold)}
+#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+section,footer{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:90px 22px}
+h2{font-size:clamp(28px,5vw,48px);color:#fff;border-left:4px solid var(--red);padding-left:16px;text-shadow:0 0 24px rgba(46,230,196,.25)}
+.lead{color:var(--mute);max-width:720px}
+#hero{max-width:none;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden}
+#hero .bg{position:absolute;inset:-10% 0;background:radial-gradient(ellipse at 50% 85%,rgba(155,28,28,.55),transparent 60%),radial-gradient(circle at 20% 20%,rgba(46,230,196,.14),transparent 45%),radial-gradient(circle at 80% 30%,rgba(201,162,75,.15),transparent 40%),linear-gradient(#05070a,#0a0d12);will-change:transform}
+#hero .ruins{position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(#0000,#05070a),repeating-linear-gradient(90deg,#11151b 0 40px,#0a0d12 40px 70px,#151a21 70px 90px);clip-path:polygon(0 40%,8% 20%,14% 45%,22% 10%,30% 35%,40% 15%,52% 40%,63% 5%,72% 30%,84% 12%,92% 38%,100% 20%,100% 100%,0 100%);opacity:.9}
+#hero>*:not(.bg):not(.ruins){position:relative;z-index:2;padding:0 22px}
+#hero h1{font-size:clamp(44px,10vw,120px);line-height:1;color:var(--gold);background:linear-gradient(#f3d98b,#a77a21);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 28px rgba(201,162,75,.4))}
+#hero p{font-size:clamp(17px,2.4vw,24px);max-width:780px;color:#c3cad4}
+.btn{display:inline-block;margin-top:18px;padding:14px 34px;border:1px solid var(--gold);color:#fff;background:linear-gradient(135deg,var(--red),#4a0d0d);text-decoration:none;font-family:'Russo One',sans-serif;letter-spacing:.06em;box-shadow:0 0 22px rgba(155,28,28,.6);transition:.3s}
+.btn:hover,.btn:focus-visible{box-shadow:0 0 34px rgba(46,230,196,.55);transform:translateY(-2px)}
+.mouse{position:absolute;bottom:26px;left:50%;width:24px;height:40px;border:2px solid var(--gold);border-radius:14px;z-index:2}
+.mouse::after{content:"";position:absolute;left:9px;top:7px;width:4px;height:8px;background:var(--teal);border-radius:2px;animation:sc 1.6s infinite}
+@keyframes sc{50%{transform:translateY(12px);opacity:.2}}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:30px}
+.card{background:linear-gradient(160deg,#10151c,#0a0d12);border:1px solid #222a34;border-top:2px solid var(--gold);padding:22px;border-radius:6px;transition:.35s}
+.card:hover{border-color:var(--teal);box-shadow:0 0 26px rgba(46,230,196,.15);transform:translateY(-4px)}
+.card h3{color:var(--gold);font-size:20px}.card small{color:var(--teal);letter-spacing:.08em}
+.ph{height:200px;overflow:hidden;border-radius:6px 6px 0 0;margin:-22px -22px 16px;display:grid;place-items:center;font:44px 'Russo One';color:#ffffff30;background:radial-gradient(circle at 30% 30%,rgba(46,230,196,.2),transparent 60%),linear-gradient(135deg,#3a0f0f,#0b1016)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.hist{margin-top:14px;border-top:1px solid #222a34;padding-top:10px;font-size:14px}.hist summary{cursor:pointer;color:var(--gold);font-family:'Russo One',sans-serif;letter-spacing:.04em}.hist ul{list-style:none;margin:10px 0 0;padding:0;max-height:240px;overflow:auto}.hist li{display:flex;gap:10px;padding:3px 0;color:var(--mute);line-height:1.4}.hist li span{color:var(--teal);min-width:84px;flex-shrink:0}
+.big{display:grid;gap:26px;grid-template-columns:1fr 1fr;align-items:center;margin-top:28px}
+.stat{font:clamp(44px,8vw,84px) 'Russo One';color:var(--gold);line-height:1;text-shadow:0 0 30px rgba(201,162,75,.4)}
+.scroller{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 2px 20px;margin-top:28px}
+.scroller .card{min-width:260px;scroll-snap-align:start}
+.tl{position:relative;margin-top:34px;padding-left:30px;border-left:2px solid #2a323d}
+.tl .it{position:relative;margin-bottom:26px;cursor:pointer}
+.tl .it::before{content:"";position:absolute;left:-39px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--gold);transition:.3s}
+.tl .it:hover::before,.tl .it.on::before{background:var(--teal);box-shadow:0 0 14px var(--teal)}
+.tl b{font-family:'Russo One';color:var(--gold);font-size:22px;font-weight:400}
+.tl p{margin:2px 0 0;color:var(--mute)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+footer{text-align:center;border-top:1px solid #222a34;color:var(--mute);font-size:15px}
+footer .links a{margin:0 10px}
+@media(max-width:760px){.big{grid-template-columns:1fr}section{padding:64px 18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<header id="hero">
+<div class="bg" id="bg"></div><div class="ruins"></div>
+<h1>История Dota 2</h1>
+<p>От мода Warcraft III до величайшего киберспортивного явления</p>
+<a class="btn" href="#origins">Начать путешествие</a>
+<div class="mouse" aria-hidden="true"></div>
+</header>
+<main>
+<section id="origins"><h2 class="rv">Истоки</h2>
+<p class="lead rv">Всё началось в 2003 году с пользовательской карты для Warcraft III. Простая идея — две базы, три линии, древние для защиты — выросла в культуру, которой хватило бы на целую эпоху.</p>
+<div class="grid">
+<div class="card rv"><h3>Eul</h3><p>Автор первой карты Defense of the Ancients. Он заложил фундамент — и подарил миру идею, не подозревая, что именно породил.</p></div>
+<div class="card rv"><h3>Guinsoo</h3><p>Собрал DotA Allstars: десятки героев, предметы, рецепты. Сообщество впервые почувствовало, что играет во что-то большее, чем мод.</p></div>
+<div class="card rv"><h3>IceFrog</h3><p>Принял эстафету в 2005-м и годами вёл игру сквозь баланс и обновления. Позже его пригласила Valve — и это изменило всё.</p></div></div>
+<div class="tl">
+<div class="it rv"><b>2003</b><p>Eul выпускает первую карту DotA для Warcraft III.</p></div>
+<div class="it rv"><b>2005</b><p>Allstars переходят под руководство IceFrog.</p></div>
+<div class="it rv"><b>2009–2010</b><p>IceFrog приходит в Valve; компания получает права на бренд и анонсирует Dota 2.</p></div>
+<div class="it rv"><b>2011</b><p>Закрытая бета и The International — первый чемпионат с призовым фондом в 1,6 млн долларов.</p></div></div></section>
+
+<section id="first"><h2 class="rv">Первые турниры</h2>
+<div class="big"><div class="rv"><div class="stat">$1,6 млн</div><p>Призовой фонд TI1 в Кёльне на выставке Gamescom — сумма, о которой киберспорт того времени мог лишь мечтать. Победителям достался миллион.</p></div>
+<div class="rv"><p>Natus Vincere, ведомые Dendi и Puppey, обыграли EHOME в финале 3:1. Украинская команда стала первым чемпионом мира Dota 2, а зал взорвался так, будто история действительно началась в этот самый миг.</p><p>До этого сцену строили DreamHack, ESL и десятки энтузиастов. TI1 стал тем, чем ему суждено было остаться: вершиной сезона, мечтой каждого игрока и ежегодным праздником сообщества.</p></div></div></section>
+
+<section id="players"><h2 class="rv">Легендарные игроки и команды</h2>
+<p class="lead rv">Составы NaVi, Alliance, OG, Liquid, Secret, EG и Team Spirit — это не просто названия, а эпохи.</p>
+<div class="grid" id="pl"></div></section>
+
+<section id="heroes"><h2 class="rv">Герои сквозь эпохи</h2>
+<p class="lead rv">Стартовый пул — около сотни героев из Allstars. Дальше игра росла, и каждый новичок менял расклад на карте. Листайте вправо.</p>
+<div class="scroller" id="hr"></div></section>
+
+<section id="patches"><h2 class="rv">Патчи и эволюция меты</h2>
+<div class="grid" id="pt"></div></section>
+
+<section id="moments"><h2 class="rv">Легендарные моменты</h2>
+<div class="grid" id="mo"></div></section>
+
+<section id="timeline"><h2 class="rv">Общая временная шкала</h2>
+<div class="tl" id="tl"></div></section>
+</main>
+<footer>
+<p class="rv"><b style="color:var(--gold)">Создано для сообщества</b> — с благодарностью всем, кто жил каждым International.</p>
+<p class="links"><a href="https://www.dota2.com" rel="noopener">Официальный сайт Dota 2</a><a href="https://liquipedia.net/dota2" rel="noopener">Liquipedia</a></p>
+<p>Источники: Liquipedia, Dota 2 Wiki, официальные блоги Valve. Фан-проект, не связан с Valve.</p>
+</footer>
+<script>
+Promise.resolve({"pl":[["Dendi","Завершил карьеру","Чемпион TI1. Король Pudge и всеобщий любимец: хук Dendi стал символом эпохи.","2007–2008|WolkeR Gaming;2008|Ks.int;2008–2009|DTS Gaming;2009|KS.Int;2009–2010|DTS Gaming;2010–2015|Natus Vincere;2015–н. в.|Natus Vincere;2019|Tigers (аренда);2019|The Pango (аренда);2019|The Pango;2020–2022|B8;2022–2025|B8"],["Puppey","PARIVISION (тренер)","Чемпион TI1, капитан и стратег. Почти десять лет вёл Team Secret, а с 2026 года тренирует PARIVISION.","2007–2008|XsK;2008–2009|Ks.int;2009–2010|Blight.int;2010|Nirvana.int (дважды);2010–2011|NWO;2011|GosuGamers;2011–2014|Natus Vincere;2014–2026|Team Secret;2026–н. в.|PARIVISION (тренер)"],["s4","Завершил карьеру","Лицо Rat Dota и чемпион TI3. Лидер, умевший читать игру на три хода вперёд.","2012|Team Empire;2012|The Tough Bananas;2012|Copenhagen Wolves (дважды);2012–2013|No Tidehunter;2013–2014|Alliance;2014–2015|Team Secret;2015–2016|Alliance;2016–2018|OG;2018–2019|Evil Geniuses;2019–2020|EG (неактивен);2020–2023|Alliance;2022|goonsquad;2022–2023|Alliance"],["N0tail","Завершил карьеру","Дважды чемпион TI. Тот, кто сделал из андердогов легенду.","2012–2014|Fnatic;2014–2015|Team Secret;2015|Cloud9;2015|Monkey Business;2015–2021|OG;2019–2020|OG Seed (тренер);2021–2023|OG (неактивен);2025|OG (главный тренер)"],["Miracle-","NGX (неактивен)","Мид-игрок, чемпион TI7. Агрессия и механика, ставшие эталоном.","2015|Balkan Bears;2015|Monkey Business;2015–2016|OG;2016–2019|Team Liquid;2019–2022|Nigma Galaxy;2022–2023|NGX (неактивен);2023–2025|Nigma Galaxy;2025–н. в.|NGX (неактивен)"],["SumaiL","LGD Gaming","Чемпион TI5 в шестнадцать лет. Дерзкий вундеркинд.","2015–2016|Evil Geniuses;2016–2019|Evil Geniuses;2019|EG (неактивен);2019|Evil Geniuses;2019|Quincy Crew;2019–2020|EG (неактивен);2020|OG;2021|Liquid (замена);2021|OG;2021–2022|Team Secret;2022–2023|Nigma Galaxy;2023|NGX (неактивен);2023|Team Aster (аренда);2023–2026|Nigma Galaxy;2026|Nigma Galaxy;2026–н. в.|LGD Gaming"],["Ana","Завершил карьеру","Керри OG: хладнокровие, вытащившее два Эгиса подряд.","2013|Mobility Gaming;2016|iG (запас);2016–2017|OG;2018|Team World;2018|Echo International;2018|OG;2018–2019|OG (неактивен);2019–2020|OG;2020–2021|OG (неактивен);2021|OG;2021–2022|Завершил карьеру;2022|T1"],["Topson","OG","Мид OG на TI8 и TI9 — креатив и стабильность.","2017|SFTe-sports;2017|No Rats;2017–2018|5 Anchors;2018–2021|OG;2021–2023|OG (неактивен);2022|T1 (замена);2023–2024|Tundra Esports;2024–2026|Завершил карьеру;2026|LGD Gaming;2026–н. в.|OG"],["Ceb","Завершил карьеру","Столп команды, поддерживавший её на пути к двум титулам.","2011–2012|Team Shakira;2012|Western Wolves;2012|Team Shakira;2012|Mortal Teamwork;2012–2013|DD.Dota;2013|Quantic Gaming;2013|DD.Dota;2013–2014|Sigma.int;2014|TF;2014–2015|Denial eSports;2015|Basically Unknown;2015|Team FIRE;2015|Summer's Rift;2015|Alliance;2015|Monkey Freedom;2015–2016|Kaipi;2016–2018|OG (тренер);2018–2020|OG;2020|OG (неактивен);2020–2021|OG;2021–2023|Завершил карьеру;2023–2025|OG;2025|OG"],["Arteezy","Завершил карьеру","Чемпион TI5, король фарма и один из самых узнаваемых керри.","2013|Kaipi;2013|Take Five;2014|SadBoys;2014–2015|Evil Geniuses;2015|Team Secret;2015–2016|Evil Geniuses;2016|Team Secret;2016–2022|Evil Geniuses;2022–2024|Shopify Rebellion;2024–2025|SR (неактивен)"],["KuroKy","NGX (тренер)","Капитан Team Liquid, чемпион TI7. Позже вёл Nigma Galaxy, а с 2024 года — тренер NGX.","2010|Online Kingdom (DotA);2011|GosuGamers.net;2012|uebelst-gamynG;2012|mouz (замена);2012|mousesports;2012|Virtus.pro;2012|The GD B-Team;2012|Team Zero;2012–2013|mousesports;2013–2014|Natus Vincere;2014–2015|Team Secret;2015|5Jungz;2015–2019|Team Liquid;2019–2024|Nigma Galaxy;2024–н. в.|NGX (тренер)"],["Yatoro","Team Spirit","Керри Spirit и трёхкратный чемпион TI (2021, 2023, 2026) — первый игрок в истории с тремя Эгидами.","2020|Yellow Submarine;2020–2024|Team Spirit;2024–2025|TSpirit (неактивен);2025–н. в.|Team Spirit"],["Collapse","Team Spirit (неактивен)","Оффлейнер и архитектор игры Spirit. Три Эгиды (2021, 2023, 2026) — первый трёхкратный чемпион TI.","2020|Cascade;2020|Yellow Submarine;2020–2026|Team Spirit;2026–н. в.|TSpirit (неактивен)"]],"hr":[["Invoker","Allstars","Сложнейший маг: десять заклинаний из трёх сфер."],["Arc Warden","~2016","Двойник, переписавший понятие микроконтроля."],["Underlord","~2016","Танк с властью над позицией и линиями."],["Pangolier","~2018","Перекатывающийся дуэлянт — стиль и дерзость."],["Void Spirit","~2020","Мобильный маг с четырьмя стихиями."],["Primal Beast","~2021","Мощный инициатор с яростью и бросками."],["Muerta","2023","Охотница с двумя формами: призрак и дробовик."],["Ringmaster","22 августа 2024","Саппорт-шоумен: каждая драка превращается в цирковое представление."],["Kez","7 ноября 2024","Ловкий воин-птица, переключающийся между двумя боевыми стилями: катана и сай."],["Largo","15 декабря 2025","Лягушка-бард: ритм его песни диктует темп всей драки."]],"pt":[["6.78","Эпоха Reborn-предшественников: классический темп."],["6.82","Баланс, который закалил TI4–TI5."],["6.88","Огромное обновление героев и предметов."],["7.00 «Новое путешествие»","Дерево талантов, аванпосты и новый ритм игры."],["7.07","Перестройка предметов и героев после «Нового пути»."],["7.2x","Нейтральные предметы и новые правила вмешательства."],["7.33 «Новые рубежи»","Расширенная карта, новые объекты и ритм."]],"mo":[["TI1 · 2011 · Кёльн","Путь NaVi","Natus Vincere обыграли EHOME 3:1 и забрали миллион из призового фонда в 1,6 млн долларов. Состав: Dendi, Puppey, XBOCT, LighTofHeaven, Funn1k.","ti1.jpg"],["TI2 · 2012 · Сиэтл","Invictus Gaming","Китайцы одолели Natus Vincere 3:1 и увезли первую Эгиду в Азию. Состав: Ferrari_430, YYF, Zhou, ChuaN, Faith.","ti2.jpg"],["TI3 · 2013 · Сиэтл","Alliance","Победа над Natus Vincere 3:2 в финале, вошедшем в историю как триумф Rat Dota. Состав: s4, AdmiralBulldog, Loda, EGM, Akke.","ti3.jpg"],["TI4 · 2014 · Сиэтл","Newbee","Победа над Vici Gaming 3:1 в финале двух китайских команд, при рекордном на тот момент призовом фонде около 10,9 млн долларов. Состав: Hao, Mu, xiao8, Banana, SanSheng.","ti4.jpg"],["TI5 · 2015 · Сиэтл","Evil Geniuses","Победа над CDEC Gaming 3:1 и первая Эгида для американской команды. Состав: Arteezy, SumaiL, Universe, Aui_2000, Fear.","ti5.jpg"],["TI6 · 2016 · Сиэтл","Wings Gaming","Победа над Digital Chaos 3:1 — китайская команда поднимает Эгиду при призовом фонде свыше 20 млн долларов. Состав: bLink, shadow, y`, iceiceice, Faith_bian.","ti6.jpg"],["TI7 · 2017 · Сиэтл","Team Liquid","Чистая победа над Newbee 3:0. Первая Эгида Liquid. Состав: Miracle-, MinD_ContRoL, GH, KuroKy, MATUMBAMAN.","ti7.jpg"],["TI8 · 2018 · Ванкувер","OG","Победа над PSG.LGD 3:2 — история андердогов, ставшая легендой. Состав: N0tail, Ana, Topson, Ceb, JerAx.","ti8.jpg"],["TI9 · 2019 · Шанхай","OG","Победа над Team Liquid 3:1 и вторая Эгида подряд — первая такая серия в истории TI, при рекордном призовом фонде около 34,3 млн долларов. Состав тот же: N0tail, Ana, Topson, Ceb, JerAx.","ti9.jpg"],["TI10 · 2021 · Бухарест","Team Spirit","Победа над PSG.LGD 3:2 и первая Эгида Spirit. Состав: Yatoro, TORONTOTOKYO, Collapse, Mira, Miposhka.","ti10.jpg"],["TI11 · 2022 · Сингапур","Tundra Esports","Победа над Team Secret 3:2 в напряжённом финале. Состав: Skiter, Nine, 33, Saksa, Sneyking.","ti11.jpg"],["TI12 · 2023 · Сиэтл","Team Spirit","Победа над Gaimin Gladiators 3:0 — вторая Эгида Spirit. Состав: Yatoro, Larl, Collapse, Mira, Miposhka.","ti12.jpg"],["TI13 · 2024 · Копенгаген","Team Liquid","Победа над Gaimin Gladiators 3:0 и вторая Эгида Liquid спустя семь лет после первой. Состав: 33, Nisha, iNSaNiA, miCKe, Boxi.","ti13.jpg"],["TI14 · 2025 · Гамбург","Team Falcons","Победа над Xtreme Gaming 3:2 в пятикарточной драме и первый титул клуба. Состав: Skiter, Malr1ne, ATF, Cr1t-, Sneyking.","ti14.jpg"],["TI15 · 2026 · Шанхай","Team Spirit","Победа над TEAM VISION (PARIVISION) 3:2 — третья Эгида, первая в истории TI. Состав: Yatoro, Larl, Collapse, not me, rue (тренеры: Miposhka и MiLAN).","ti15.jpg"]],"tl":[["2011","TI1: NaVi, $1,6 млн"],["2012","TI2: Invictus Gaming"],["2013","Релиз Dota 2 и Rat Dota на TI3"],["2014","TI4: Newbee, $10,9 млн"],["2015","Reborn на Source 2; TI5: EG, $18,4 млн"],["2016","TI6: Wings Gaming; патч 7.00"],["2017","TI7: Team Liquid"],["2018","TI8: OG, Ванкувер"],["2019","TI9: OG, Шанхай, $34,3 млн"],["2021","TI10: Team Spirit, Бухарест, $40 млн"],["2022","TI11: Tundra Esports, Сингапур"],["2023","TI12: Team Spirit; патч 7.33"],["2024","TI13: Team Liquid, Копенгаген"],["2025","TI14: Team Falcons"],["2026","TI 2026: Team Spirit — третья Эгида, Шанхай"]]}).then(D=>{
+const $=s=>document.getElementById(s);
+const IMG={Invoker:['invoker.jpg','40% 30%'],'Arc Warden':['arcwarden.jpg','55% 50%'],Underlord:['underlord.jpg','50% 50%'],Pangolier:['pangolier.jpg','60% 40%'],'Void Spirit':['voidspirit.jpg','45% 40%'],'Primal Beast':['primalbeast.jpg','50% 45%'],Muerta:['muerta.jpg','50% 40%'],Ringmaster:['ringmaster.jpg','42% 40%'],Kez:['kez.jpg','50% 40%'],Largo:['largo.jpg','50% 40%'],Ceb:['ceb.jpg','50% 8%'],Arteezy:['arteezy.jpg','38% 25%'],KuroKy:['kuroky.jpg','50% 10%'],Yatoro:['yatoro.jpg','50% 14%'],Collapse:['collapse.jpg','50% 10%'],Dendi:['dendi.jpg','57% 25%'],Puppey:['puppey.jpg','50% 14%'],s4:['s4.jpg','42% 30%'],N0tail:['n0tail.jpg','42% 22%'],'Miracle-':['miracle.jpg','52% 21%'],SumaiL:['sumail.jpg','42% 28%'],Ana:['ana.jpg','48% 40%'],Topson:['topson.jpg','50% 30%']};
+const phf=(a,im)=>{const i=im?[im,"50% 40%"]:IMG[a];return i?`<img src="img/${i[0]}" alt="Фото: ${a}" loading="lazy" style="object-position:${i[1]}">`:a[0]};
+const card=(a,b,c,ph,h,im)=>`<div class="card rv">${ph?`<div class="ph">${phf(a,im)}</div>`:''}<small>${b}</small><h3>${a}</h3><p>${c}</p>${h?`<details class="hist"><summary>История команд</summary><ul>${h.split(";").map(x=>{const t=x.split("|");return `<li><span>${t[0]}</span>${t[1]}</li>`}).join("")}</ul></details>`:""}</div>`;
+$('pl').innerHTML=D.pl.map(p=>card(p[0],p[1],p[2],1,p[3])).join('');
+$('hr').innerHTML=D.hr.map(p=>card(p[0],p[1],p[2],1)).join('');
+$('pt').innerHTML=D.pt.map(p=>card(p[0],'ПАТЧ',p[1])).join('');
+$('mo').innerHTML=D.mo.map(p=>card(p[1],p[0],p[2],1,0,p[3])).join('');
+$('tl').innerHTML=D.tl.map(p=>`<div class="it rv" tabindex="0"><b>${p[0]}</b><p>${p[1]}</p></div>`).join('');
+document.querySelectorAll('.tl .it').forEach(e=>e.addEventListener('click',()=>{document.querySelectorAll('.it.on').forEach(x=>x.classList.remove('on'));e.classList.add('on')}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+addEventListener('scroll',()=>{$('bg').style.transform=`translateY(${scrollY*.35}px)`},{passive:true});
+(function(){const c=$('fx'),x=c.getContext('2d');let w,h,P=[];function r(){w=c.width=innerWidth;h=c.height=innerHeight}r();addEventListener('resize',r);
+for(let i=0;i<55;i++)P.push({x:Math.random()*w,y:Math.random()*h,s:Math.random()*1.8+.4,v:Math.random()*.3+.1,t:Math.random()<.5});
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+(function f(){x.clearRect(0,0,w,h);P.forEach(p=>{p.y-=p.v;if(p.y<0){p.y=h;p.x=Math.random()*w}x.fillStyle=p.t?'rgba(46,230,196,.45)':'rgba(201,162,75,.4)';x.beginPath();x.arc(p.x,p.y,p.s,0,6.3);x.fill()});requestAnimationFrame(f)})()})();
+});
+</script>
+</body>
+</html>
