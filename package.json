@@ -1,0 +1,10 @@
+{
+  "name": "dota2-history",
+  "version": "1.0.0",
+  "description": "История Dota 2 — Java-сервер и сайт",
+  "private": true,
+  "scripts": {
+    "dev": "java Server",
+    "start": "java Server"
+  }
+}
